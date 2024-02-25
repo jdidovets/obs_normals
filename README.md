@@ -18,10 +18,11 @@ date, discharge
 
 
 Setup:
-1. Store files with observed daily river discharge in the "input" directory.
-2. In the script "normals_calculation.R", set the "workdir" variable to your working directory path, where the script and data folders are located.
-3. Run the script "normals_calculation.R"
-4. Check the result in the "output directory" for results
+1. In the location of "normals_calculation.R" file create two folders and name them "input" and "output".
+2. Store files with observed daily river discharge in the "input" directory.
+3. In the script "normals_calculation.R", set the "workdir" variable to your working directory path, where the script and data folders are located.
+4. Run the script "normals_calculation.R"
+5. Check the result in the "output" for results
 
 
 
