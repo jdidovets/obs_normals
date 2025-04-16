@@ -1,7 +1,7 @@
 # Script analyses observed river discharge and calculates "normals" for a given year
 
 ### input data
-workdir <-"C:/Users/didovets/Documents/Projects/project_1/2024/scripts/obs_normals/"
+workdir <-"your/work/directory/obs_normals/"
 
 start_ref <-1991       # first reference year
 end_ref <-2020         # last reference year
