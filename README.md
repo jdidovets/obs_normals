@@ -9,7 +9,7 @@ Requirements:
 
 Ensure R and Rstudio are installed.
 
-Observations should contain at least 20 years of daily river discharge for the period from 1991 to 2020 and evaluation year 2023.
+Observations should contain at least 20 years of daily river discharge for the period from 1991 to 2020 and evaluation year 2024.
 Data should be formatted in a comma-delimited CSV file with columns for 'date' (format: YYYY-MM-DD), 'discharge' e.g.
 date, discharge
 1991-01-01, 23.5
@@ -18,12 +18,18 @@ date, discharge
 
 
 Setup:
-1. In the location of "normals_calculation.R" file create two folders and name them "input" and "output".
-2. Store files with observed daily river discharge in the "input" directory.
-3. In the script "normals_calculation.R", set the "workdir" variable to your working directory path, where the script and data folders are located.
-4. Run the script "normals_calculation.R"
-5. Check the result in the "output" for results
 
+1. Store files with observed daily river discharge in the "input" directory.
+2. In the script "normals_calculation.R", set the "workdir" variable to your working directory path, where the script and data folders are located.
+3. Run the script "normals_calculation.R"
+4. Check the result in the "output" for results
+
+
+
+Installation of R packages
+
+Run in the console the next command:
+install.packages(package_name)
 
 
 

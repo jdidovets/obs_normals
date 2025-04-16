@@ -1,11 +1,11 @@
 # Script analyses observed river discharge and calculates "normals" for a given year
 
 ### input data
-workdir <-"C:/Users/didovets/Documents/Projects/project_1/2024/scripts/obs_normals"
+workdir <-"C:/Users/didovets/Documents/Projects/project_1/2024/scripts/obs_normals/"
 
 start_ref <-1991       # first reference year
 end_ref <-2020         # last reference year
-eval_year <-2022       # evaluation year
+eval_year <-2024       # evaluation year
 
 sel_percentile<-c(0.1,0.25, 0.75, 0.9)  # percentiles
 
@@ -75,9 +75,9 @@ check_eval_year <- function(df) {
   
   # Check if the number of observations is less than 345
   if (num_observations < 345) {
-    stop("Error: The number of observations in 2023 is ",num_observations,    "(<345).")
+    stop("Error: The number of observations in 2024 is ",num_observations,    "(<345).")
   } else {
-    message("The number of observations in 2023 is ", num_observations, " (>345). Good!")
+    message("The number of observations in 2024 is ", num_observations, " (>345). Good!")
   }
   return(invisible(num_observations))
 }
@@ -94,13 +94,13 @@ reference<-reference_sel %>%   group_by(year) %>%
 
 # calculate the annual mean
 target_year<- target_year_sel %>% 
-  summarise(Q_year=mean(discharge, na.rm=T)) %>% round(2) %>%             # convert to annual mean
+  summarise(Q_eval_year=mean(discharge, na.rm=T)) %>% round(2) %>%             # convert to annual mean
   mutate(state=case_when(
-    Q_year >= reference$values[2] & Q_year <= reference$values[3] ~ 'normal',
-    Q_year < reference$values[1] ~ 'much below',
-    Q_year >= reference$values[1] & Q_year < reference$values[2] ~ 'below',
-    Q_year > reference$values[3] & Q_year < reference$values[4] ~ 'above',
-    Q_year >= reference$values[4] ~ 'much above'
+    Q_eval_year >= reference$values[2] & Q_eval_year <= reference$values[3] ~ 'normal',
+    Q_eval_year <= reference$values[1] ~ 'much below',
+    Q_eval_year > reference$values[1] & Q_eval_year < reference$values[2] ~ 'below',
+    Q_eval_year > reference$values[3] & Q_eval_year < reference$values[4] ~ 'above',
+    Q_eval_year >= reference$values[4] ~ 'much above'
   ))                                                                      # classify normal
 
 
@@ -116,9 +116,10 @@ results_out<- result %>% as.data.frame() %>%  slice(-1) %>%
 
 tab_all_stations<-rbind(tab_all_stations, results_out)
 
-
 write.csv(tab_all_stations, paste("output/normals.csv", sep=''), row.names = FALSE, quote = F)
 
 
 }
+
+print(tab_all_stations)
 
