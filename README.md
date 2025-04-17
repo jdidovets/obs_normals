@@ -1,35 +1,21 @@
-# obs_normals
-Instructions for Running the Discharge Normals Calculation Script
+# Tools for Labels calculation
+This folder contains useful tools for normals and labels calcuation for the State of the Global Water Resources Report
 
-Overview: The script calculates river discharge "normals" for a given year in comparison to the reference period based on daily observations.
-The script can operate across multiple gauges.
+**Folder R-Script** contains R-based script, including instructions and examples on how to install and use it.
 
+**Folder GSheet** contains instructions how to install and use the G Sheet add-on for normals calculations
 
-Requirements:
+## Feedback
+We are happy to receive your feedback regarding the tooling here:
 
-Ensure R and Rstudio are installed.
+https://forms.gle/wtPtHVhQ3QpX92wy7 
 
-Observations should contain at least 20 years of daily river discharge for the period from 1991 to 2020 and evaluation year 2024.
-Data should be formatted in a comma-delimited CSV file with columns for 'date' (format: YYYY-MM-DD), 'discharge' e.g.
-date, discharge
-1991-01-01, 23.5
-1991-01-02, 26.9
-1991-01-03, 28.5
-
-
-Setup:
-
-1. Store files with observed daily river discharge in the "input" directory.
-2. In the script "normals_calculation.R", set the "workdir" variable to your working directory path, where the script and data folders are located.
-3. Run the script "normals_calculation.R"
-4. Check the result in the "output" for results
+Please, help us to improve! 🙂
 
 
 
-Installation of R packages
 
-Run in the console the next command:
-install.packages(package_name)
+
 
 
 
