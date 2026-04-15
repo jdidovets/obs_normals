@@ -7,8 +7,8 @@ An Excel macro-enabled workbook (`.xlsm`) for classifying annual and monthly str
 ## How it works
 
 1. Daily discharge values for a **target year** (e.g. 2025) and a **historical reference period** (e.g. 1991–2020) are read from the data sheet.
-2. **Monthly averages** are computed for each year in the historical period, producing a ranked reference distribution for each calendar month.
-3. The target year's monthly average is compared to that distribution and assigned a label based on its percentile position.
+2. **Annual (or Monthly) averages** are computed for each year in the historical period, producing a ranked reference distribution.
+3. The target year's annual (or monthly) average is compared to that distribution and assigned a label based on its percentile position.
 
 ### Classification rule
 
